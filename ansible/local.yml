@@ -19,5 +19,7 @@
       when: ansible_os_family == "Debian"
 
   tasks:
-    - include: tasks/docker.yml
-    - include: tasks/setup.yml
+    - name: setup docker
+      import_tasks: tasks/docker.yml
+    - name: setup docker
+      import_tasks: tasks/setup.yml
