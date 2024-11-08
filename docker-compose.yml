@@ -20,6 +20,8 @@ services:
       - sms-db
     image: wordpress
     restart: unless-stopped
+    ports:
+      - '8080:8080'
     volumes:
       - wordpress:/var/www/html
     networks:
