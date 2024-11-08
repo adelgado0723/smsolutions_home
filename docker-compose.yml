@@ -39,6 +39,7 @@ services:
     container_name: sms-nginx
     depends_on:
       - sms-wordpress
+      - sms-certbot
     image: nginx:alpine
     restart: unless-stopped
     ports:
@@ -53,8 +54,6 @@ services:
 
   sms-certbot:
     container_name: sms-certbot
-    depends_on:
-      - sms-nginx
     image: certbot/certbot
     volumes:
       - certbot-etc:/etc/letsencrypt
