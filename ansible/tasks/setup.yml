@@ -15,3 +15,15 @@
     mode: 644
   tags:
     - setup
+
+- name: Install fail2ban
+  become: true
+  ansible.builtin.apt:
+    name:
+      - fail2ban
+    state: present
+    update_cache: true
+  tags:
+    - docker
+
+# TODO: setup fail2ban and sshd configs
